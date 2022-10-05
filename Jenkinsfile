@@ -53,11 +53,7 @@ spec:
     stage('Checkout www repo') {
       steps {
         dir('www') {
-            sshagent(['github-bot-ssh']) {
-                sh '''
-                    git clone ssh://genie.glsp@github.com/eclipse-glsp/glsp-website.git .
-                    git checkout ${BRANCH_NAME}
-                '''
+            git branch: '${BRANCH_NAME}', credentialsId: 'github-bot-ssh', url: 'https://github.com/eclipse-glsp/glsp-website.git'
             }
         }
       }
