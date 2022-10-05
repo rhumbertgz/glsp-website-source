@@ -54,7 +54,6 @@ spec:
       steps {
         dir('www') {
             git branch: '${BRANCH_NAME}', credentialsId: 'github-bot-ssh', url: 'https://github.com/eclipse-glsp/glsp-website.git'
-            }
         }
       }
     }
